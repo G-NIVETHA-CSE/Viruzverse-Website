@@ -1,0 +1,113 @@
+.about-container {
+  background: linear-gradient(to right, #f0f8ff, #fff9c4, #add8e6);
+  min-height: 100vh;
+  padding-top: 80px;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
+
+.about-heading h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #2c3e50;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  letter-spacing: 2px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.about-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px;
+}
+
+.about-box {
+  width: 300px;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background 0.3s ease-in-out;
+  color: white;
+}
+
+.about-box:hover {
+  transform: translateY(-12px);
+  box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* Add different gradient backgrounds for each box */
+.about-box:nth-child(1) {
+  background: linear-gradient(to right, #f0f8ff, #a8d0e6);
+}
+
+.about-box:nth-child(2) {
+  background: linear-gradient(to right, #fff9c4, #ffb6b9);
+}
+
+.about-box:nth-child(3) {
+  background: linear-gradient(to right, #add8e6, #a2c2e3);
+}
+
+.about-box:nth-child(4) {
+  background: linear-gradient(to right, #ffeb3b, #ff9800);
+}
+
+.about-box h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.about-box p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-top: 10px;
+  line-height: 1.6;
+}
+
+.quote {
+  margin-top: 50px;
+  font-size: 1.6rem;
+  font-style: italic;
+  color: #34495e;
+  opacity: 0;
+  animation: fadeIn 2s ease-in-out forwards;
+  padding: 0 20px;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-heading h1 {
+    font-size: 2.2rem;
+  }
+
+  .about-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-box {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .quote {
+    font-size: 1.4rem;
+    margin-top: 30px;
+  }
+}

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import '../stylefiles/Header.css';
-import logo from '../asserts/logo.png';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -27,24 +27,58 @@ const Header = () => {
   return (
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="logo">
-        <img src={logo} alt="vv" className="logo-spin" />
+        <h1>Viruzverse</h1>
       </div>
       <button className="menu-toggle" onClick={handleMenuToggle}>
         <span className={`hamburger ${isMenuOpen ? 'active' : ''}`}></span>
       </button>
       <nav>
         <ul className={isMenuOpen ? 'active' : ''}>
-          {['home', 'services', 'about', 'contact'].map((item) => (
-            <li key={item}>
-              <a
-                href={`#${item}`}
-                className={`nav-link ${activeLink === item ? 'active' : ''}`}
-                onClick={() => handleNavClick(item)}
-              >
-                {item.charAt(0).toUpperCase() + item.slice(1)}
-              </a>
-            </li>
-          ))}
+          <li>
+            <Link
+              to="/"
+              className={`nav-link ${activeLink === 'home' ? 'active' : ''}`}
+              onClick={() => handleNavClick('home')}
+            >
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/about"
+              className={`nav-link ${activeLink === 'about' ? 'active' : ''}`}
+              onClick={() => handleNavClick('about')}
+            >
+              About
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/services"
+              className={`nav-link ${activeLink === 'services' ? 'active' : ''}`}
+              onClick={() => handleNavClick('services')}
+            >
+              Services
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/courses"
+              className={`nav-link ${activeLink === 'courses' ? 'active' : ''}`}
+              onClick={() => handleNavClick('courses')}
+            >
+              Courses
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/contact"
+              className={`nav-link ${activeLink === 'contact' ? 'active' : ''}`}
+              onClick={() => handleNavClick('contact')}
+            >
+              Contact
+            </Link>
+          </li>
         </ul>
       </nav>
     </header>

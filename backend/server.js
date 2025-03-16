@@ -9,12 +9,18 @@ app.use(express.json());
 
 // Nodemailer transporter
 const transporter = nodemailer.createTransport({
-  service: "gmail",
+  host: "smtp.gmail.com",
+  port: 587, // Use 587 instead of 465
+  secure: false, // False for 587
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS,
   },
+  tls: {
+    rejectUnauthorized: false, // Fixes certificate issues
+  },
 });
+
 
 // Email API Route
 app.post("/api/send-email", async (req, res) => {

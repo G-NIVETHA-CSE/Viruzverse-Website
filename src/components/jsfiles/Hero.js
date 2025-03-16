@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import '../stylefiles/Hero.css';
-import heroImage from '../asserts/hero-image.png';
 
 const Hero = () => {
   const [currentSolution, setCurrentSolution] = useState(0);
@@ -29,22 +28,19 @@ const Hero = () => {
           <h1 className="hero-line second">Viruzverse Solution</h1>
           <div className="hero-line third">
             <span className="static-text">Our Programs: </span>
-            <div class="card">
-              <div class="loader">
-                <div class="words">
-                  <span class="word">Web Development</span>
-                  <span class="word">UI/Ux Design</span>
-                  <span class="word">AI Integration</span>
-                  <span class="word">DevOps</span>
-                  <span class="word">Iot</span>
+            <div className="card">
+              <div className="loader">
+                <div className="words">
+                  <span className="word">Web Development</span>
+                  <span className="word">UI/Ux Design</span>
+                  <span className="word">AI Integration</span>
+                  <span className="word">DevOps</span>
+                  <span className="word">Iot</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div className="hero-image">
-        <img src={heroImage} alt="Viruzverse Solutions" />
       </div>
     </section>
   );
