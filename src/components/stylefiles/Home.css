@@ -1,19 +1,19 @@
 /* Home container */
 .home-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    min-height: 100vh;
-    background: linear-gradient(135deg, #ffffff, #87CEEB, #FFD700); /* Gradient */
-    font-family: 'Poppins', sans-serif;
-    padding-top: 80px; /* Adjust to match header height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: calc(100vh - 80px); /* Adjusted height to prevent extra scroll */
+  font-family: 'Poppins', sans-serif;
+  padding-top: 80px; /* Matches header height */
+  overflow-x: hidden; /* Prevents horizontal scroll */
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 768px) {
+  .home-container {
+      padding-top: 60px;
+      min-height: calc(100vh - 60px);
   }
-  
-  /* Ensure content does not overlap */
-  @media (max-width: 768px) {
-    .home-container {
-      padding-top: 60px; /* Adjust for smaller screens */
-    }
-  }
-  
+}

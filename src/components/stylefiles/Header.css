@@ -1,137 +1,170 @@
-/* General Header Styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap');
+
+/* Header Styling */
 .header {
+    background: linear-gradient(to right, #49243E, #704264);
+    height: 70px; /* Set fixed height */
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
     position: fixed;
     width: 100%;
     top: 0;
     left: 0;
-    background: linear-gradient(90deg, #ffffff, #cce7ff, #0072ff, #ffcc00);
-    color: white;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(73, 36, 62, 0.15);
+    transition: all 0.3s ease;
+}
+
+.header.scrolled {
+    padding: 0.6rem 0;
+    background: rgba(73, 36, 62, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+/* Navigation Container */
+.nav-container {
+    max-width: 1600px;
+    width: 85%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo Styling */
+.logo {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 15px 30px;
-    transition: all 0.3s ease-in-out;
-    z-index: 1000;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    gap: 0.75rem;
 }
 
-/* Scrolled Effect */
-.header.scrolled {
-    background: linear-gradient(90deg, #ffffff, #b0d4ff, #005bb5, #ffdd55);
-    padding: 10px 30px;
+.logo-img {
+    height: 60px; /* Adjust this value to increase/decrease logo size */
+    width: auto; /* Maintain aspect ratio */
+    max-height: 100%; /* Ensure it doesn't exceed header height */
+    transition: transform 0.3s ease;
 }
 
-/* Logo */
-.logo {
+.logo:hover .logo-img {
+    transform: scale(1.1);
+}
+
+/* Navigation Styling */
+nav {
     flex: 1;
     display: flex;
+    justify-content: flex-end;
     align-items: center;
-}
-
-.logo h1 {
-    margin: 0;
-    font-size: 24px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    color: #004080;
-    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
-}
-
-.logo h1:hover {
-    transform: scale(1.1);
-    color: #ffcc00;
-}
-
-/* Navigation Menu */
-nav {
-    flex: 2;
-    display: flex;
-    justify-content: center;
 }
 
 nav ul {
-    list-style: none;
     display: flex;
+    gap: 2.5rem;
+    list-style: none;
     margin: 0;
     padding: 0;
-    gap: 20px;
+    align-items: center;
 }
 
-/* Ensuring Contact Stays Within Bounds */
-nav ul li {
-    margin: 0;
-    padding: 10px 15px;
-    white-space: nowrap; /* Prevents text from breaking */
-}
-
-/* Navigation Links */
 .nav-link {
+    font-family: 'Inter', sans-serif;
+    color: #DBAFA0;
     text-decoration: none;
-    color: #004080;
     font-size: 16px;
     font-weight: 500;
-    padding: 8px 12px;
-    transition: all 0.3s ease-in-out;
+    padding: 0.5rem 0;
+    transition: all 0.3s ease;
     position: relative;
+    display: inline-block;
+    white-space: nowrap;
 }
 
-/* Hover Effect */
 .nav-link::after {
-    content: "";
+    content: '';
     position: absolute;
-    width: 100%;
-    height: 3px;
-    bottom: -3px;
-    left: 0;
-    background: #ffcc00;
-    transform: scaleX(0);
-    transition: transform 0.3s ease-in-out;
-}
-
-.nav-link:hover::after {
-    transform: scaleX(1);
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #BB8493;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
 }
 
 .nav-link:hover {
-    color: #ffcc00;
+    color: #BB8493;
 }
 
-/* Active Link */
+.nav-link:hover::after, .nav-link.active::after {
+    width: 100%;
+}
+
 .nav-link.active {
-    color: #ffdd55;
-    font-weight: bold;
+    color: #BB8493;
+    font-weight: 600;
 }
 
-/* Mobile Menu Toggle */
+/* Menu Toggle for Mobile */
 .menu-toggle {
     display: none;
     background: none;
     border: none;
     cursor: pointer;
+    padding: 0.5rem;
+    z-index: 100;
 }
 
 .hamburger {
     display: block;
-    width: 25px;
-    height: 3px;
-    background: #004080;
-    margin: 5px 0;
-    transition: transform 0.3s ease-in-out, background 0.3s;
+    width: 24px;
+    height: 2px;
+    background: #DBAFA0;
+    position: relative;
+    transition: all 0.3s ease;
 }
 
-.hamburger.active {
+.hamburger::before, .hamburger::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background: #DBAFA0;
+    transition: all 0.3s ease;
+}
+
+.hamburger::before {
+    top: -8px;
+}
+
+.hamburger::after {
+    bottom: -8px;
+}
+
+.menu-toggle.active .hamburger {
+    background: transparent;
+}
+
+.menu-toggle.active .hamburger::before {
     transform: rotate(45deg);
-    background: #ffcc00;
+    top: 0;
+}
+
+.menu-toggle.active .hamburger::after {
+    transform: rotate(-45deg);
+    bottom: 0;
 }
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-    nav ul {
-        gap: 15px; /* Adjusting spacing for medium screens */
+    .nav-container {
+        width: 90%;
     }
-
-    .nav-link {
-        font-size: 14px; /* Slightly reducing font size */
+    
+    nav ul {
+        gap: 2rem;
     }
 }
 
@@ -141,34 +174,38 @@ nav ul li {
     }
 
     nav {
-        justify-content: flex-end;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background: rgba(73, 36, 62, 0.98);
+        backdrop-filter: blur(10px);
+        padding: 80px 40px;
+        transition: all 0.4s ease;
+    }
+
+    nav.active {
+        right: 0;
     }
 
     nav ul {
-        position: absolute;
-        top: 60px;
-        right: 0;
-        width: 220px;
-        background: rgba(0, 0, 0, 0.9);
         flex-direction: column;
-        align-items: center;
-        display: none;
-        padding: 10px;
-        border-radius: 8px;
-    }
-
-    nav ul.active {
-        display: flex;
-    }
-
-    nav ul li {
-        padding: 12px;
-        text-align: center;
-        width: 100%;
+        gap: 2rem;
+        align-items: flex-start;
     }
 
     .nav-link {
-        width: 100%;
-        display: block;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-img {
+        height: 32px;
+    }
+    nav {
+        width: 85%;
+        padding: 80px 30px;
     }
 }

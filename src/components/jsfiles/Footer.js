@@ -182,13 +182,12 @@ const Footer = () => {
               {status === 'success' && <p className="success-message">Email sent successfully!</p>}
               {status === 'error' && <p className="error-message">Failed to send email. Please try again.</p>}
             </form>
-          </div>
+        </div>
         </div>
       )}
-      
-      <div className="footer-bottom">
-        <p>&copy; {currentYear} ViruzVerse. All rights reserved.</p>
-      </div>
+       <div className="footer-bottom">
+          <p>&copy; {currentYear} ViruzVerse. All rights reserved.</p>
+        </div>
     </footer>
   );
 };
