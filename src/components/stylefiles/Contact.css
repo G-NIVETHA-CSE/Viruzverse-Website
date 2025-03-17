@@ -27,6 +27,7 @@
   font-size: 1.2rem;
   margin-bottom: 30px;
   opacity: 0.8;
+  color: #49243E;
 }
 
 /* Contact Container */
@@ -57,6 +58,7 @@
 
 .contact-info p {
   font-size: 1rem;
+  color: var(--primary-dark);
 }
 
 .info-item {
