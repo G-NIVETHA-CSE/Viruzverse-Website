@@ -41,18 +41,41 @@
     gap: 0.75rem;
 }
 
-.logo-img {
-    height: 60px; /* Adjust this value to increase/decrease logo size */
-    width: auto; /* Maintain aspect ratio */
-    max-height: 100%; /* Ensure it doesn't exceed header height */
+.logo-symbol {
+    height: 70px;
+    width: auto;
+    max-height: 100%;
     transition: transform 0.3s ease;
+    filter: drop-shadow(0 0 4px rgba(219, 175, 160, 0.4));
 }
 
-.logo:hover .logo-img {
-    transform: scale(1.1);
+.logo-img {
+    height: 70px;
+    width: 150px;
+    max-height: 100%;
 }
 
-/* Navigation Styling */
+@media (max-width: 768px) {
+    .logo-symbol {
+        height: 60px; /* Slightly smaller on tablets */
+    }
+    .logo-img {
+        height: 35px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        gap: 0.5rem; /* Reduce gap on mobile */
+    }
+    .logo-symbol {
+        height: 50px; /* Adjusted for mobile */
+    }
+    .logo-img {
+        height: 30px;
+    }
+}
+
 nav {
     flex: 1;
     display: flex;

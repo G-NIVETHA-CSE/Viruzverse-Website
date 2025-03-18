@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import '../stylefiles/Header.css';
 import logo from "../../assets/logo.png";
+import logo2 from "../../assets/logo2.png";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState('home');
+  const location = useLocation(); // Get the current route path
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,63 +21,62 @@ const Header = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const handleNavClick = (section) => {
-    setActiveLink(section);
-    setIsMenuOpen(false);
-  };
-
   return (
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="nav-container">
-        <Link to="/" className="logo" onClick={() => handleNavClick('home')}>
-          <img src={logo} alt="Logo" className="logo-img" />
+        <Link to="/" className="logo">
+        <img src={logo2} alt="Logo Symbol" className="logo-symbol" />
+        <img src={logo} alt="Logo" className="logo-img" />
         </Link>
-        
+
         <nav className={isMenuOpen ? 'active' : ''}>
           <ul>
             <li>
-              <Link
-                to="/"
-                className={`nav-link ${activeLink === 'home' ? 'active' : ''}`}
-                onClick={() => handleNavClick('home')}
+              <Link 
+                to="/" 
+                className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}
               >
                 Home
               </Link>
             </li>
             <li>
-              <Link
-                to="/about"
-                className={`nav-link ${activeLink === 'about' ? 'active' : ''}`}
-                onClick={() => handleNavClick('about')}
+              <Link 
+                to="/about" 
+                className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`}
               >
                 About
               </Link>
             </li>
             <li>
-              <Link
-                to="/services"
-                className={`nav-link ${activeLink === 'services' ? 'active' : ''}`}
-                onClick={() => handleNavClick('services')}
+              <Link 
+                to="/services" 
+                className={`nav-link ${location.pathname === '/services' ? 'active' : ''}`}
               >
                 Services
               </Link>
             </li>
             <li>
-              <Link
-                to="/courses"
-                className={`nav-link ${activeLink === 'courses' ? 'active' : ''}`}
-                onClick={() => handleNavClick('courses')}
+              <Link 
+                to="/courses" 
+                className={`nav-link ${location.pathname === '/courses' ? 'active' : ''}`}
               >
                 Courses
               </Link>
             </li>
             <li>
-              <Link
-                to="/contact"
-                className={`nav-link ${activeLink === 'contact' ? 'active' : ''}`}
-                onClick={() => handleNavClick('contact')}
+              <Link 
+                to="/contact" 
+                className={`nav-link ${location.pathname === '/contact' ? 'active' : ''}`}
               >
                 Contact
+              </Link>
+            </li>
+            <li>
+              <Link 
+                to="/team" 
+                className={`nav-link ${location.pathname === '/team' ? 'active' : ''}`}
+              >
+                Our Team
               </Link>
             </li>
           </ul>

@@ -25,11 +25,13 @@ const Footer = () => {
     window.open('https://www.linkedin.com/search/results/all/?fetchDeterministicClustersOnly=true&heroEntityKey=urn%3Ali%3Aorganization%3A106396477&keywords=viruzverse%20solutions&origin=RICH_QUERY_TYPEAHEAD_HISTORY&position=0&searchId=a57d1fe1-a8d5-4a7d-9eae-b7ad2812f26d&sid=', '_blank');
   };
 
-  const handleWhatsAppClick = () => {
-    const whatsappUrl = `https://wa.me/${phoneNumber.replace(/[^0-9]/g, '')}`;
+  const handleWhatsAppClick = (e) => {
+    e.preventDefault(); // Prevent default link behavior
+    const whatsappNumber = phoneNumber.replace(/\D/g, ''); // Remove non-numeric characters
+    const message = encodeURIComponent("Hello, I would like to connect with you!"); // Pre-filled message
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
     window.open(whatsappUrl, '_blank');
   };
-
   const handleYouTubeClick = () => {
     window.open('https://www.youtube.com/@Viruzverse', '_blank');
   };
@@ -90,6 +92,7 @@ const Footer = () => {
          <li><Link to="/services">Services</Link></li>
          <li><Link to="/courses">Courses</Link></li>
          <li><Link to="/contact">Contact</Link></li>
+          <li><Link to="/team">Our Team</Link></li>
 </ul>
 
         </div>
@@ -98,9 +101,8 @@ const Footer = () => {
           <h3>Contact Info</h3>
           <ul>
             <li>
-              <a href="#" onClick={handleWhatsAppClick} className="contact-link">
-                <FaWhatsapp className="contact-icon" /> {phoneNumber}
-              </a>
+            <a href="#" onClick={handleWhatsAppClick} className="contact-link">
+  <FaWhatsapp className="contact-icon" /> {phoneNumber}</a>
             </li>
             <li>
               <a href="#" onClick={handleEmailClick} className="contact-link">

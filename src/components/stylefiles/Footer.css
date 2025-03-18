@@ -26,11 +26,11 @@ html, body {
   background: var(--dark-purple);
   color: white;
   text-align: center;
-  padding: 30px 10px;  /* Increased padding slightly */
+  padding: 30px 10px;
   font-size: 14px;
   width: 100%;
   overflow: visible;
-  margin-top: auto;  /* Pushes footer to bottom */
+  margin-top: auto;
   overflow-x: hidden;
 }
 
@@ -38,11 +38,11 @@ html, body {
 .footer-content {
   display: flex;
   justify-content: space-between;
-  align-items: start;
+  align-items: flex-start;
   flex-wrap: wrap;
   max-width: 1200px;
   margin: auto;
-  padding: 25px 15px;  /* Increased padding for better spacing */
+  padding: 25px 15px;
 }
 
 /* Individual Sections */
@@ -122,24 +122,24 @@ html, body {
 }
 
 /* Footer Bottom Section */
-.footer-bottom{
+.footer-bottom {
   background: var(--deep-purple) !important;
   padding: 12px;
   font-size: 13px;
   position: relative;
-  color: var( --light-blue);
+  color: var(--light-blue);
   width: 100vw;
   left: 0;
 }
 .footer-bottom p {
   padding-left: 15%;
-  margin: 0; 
-  color: var( --light-blue);
+  margin: 0;
+  color: var(--light-blue);
   text-align: center;
 }
 
 /* Responsive Adjustments */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .footer-content {
     flex-direction: column;
     text-align: center;
@@ -151,5 +151,168 @@ html, body {
 
   .social-icons {
     justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-section {
+    min-width: 100%;
+    padding: 10px 0;
+  }
+
+  .footer-bottom p {
+    padding-left: 0;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 20px 5px;
+  }
+
+  .footer-section h3 {
+    font-size: 18px;
+  }
+
+  .footer-section p {
+    font-size: 14px;
+  }
+
+  .footer-bottom {
+    font-size: 12px;
+    padding: 10px;
+  }
+}
+
+/* Overlay for the email form */
+.email-form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Email form container */
+.email-form {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  width: 350px;
+  text-align: center;
+  color: white;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Close button inside the form */
+/* Close button inside the form */
+.close-button {
+  width: 100%;
+  padding: 10px;
+  background: #ff9800;
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+/* Hover effect */
+.close-button:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Input fields */
+.email-form input,
+.email-form textarea {
+  width: 95%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: transparent;
+  color: white;
+  border-radius: 5px;
+}
+
+/* Placeholder text color */
+.email-form input::placeholder,
+.email-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Submit button */
+.email-form button {
+  width: 100%;
+  padding: 10px;
+  background: #ff9800;
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.email-form button:hover {
+  background: #ff5722;
+}
+
+/* Success & error messages */
+.success-message {
+  color: #4CAF50;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.error-message {
+  color: #F44336;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Responsive email form */
+@media (max-width: 600px) {
+  .email-form {
+    width: 90%;
+  }
+
+  .email-form input,
+  .email-form textarea {
+    font-size: 14px;
+  }
+
+  .email-form button {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 400px) {
+  .email-form {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .close-button {
+    width: 25px;
+    height: 25px;
+    font-size: 18px;
   }
 }

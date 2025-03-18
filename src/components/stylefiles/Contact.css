@@ -38,6 +38,7 @@
   max-width: 900px;
   margin: auto;
   gap: 40px;
+  color: #49243E;
 }
 
 /* Left Section (Contact Info) */
@@ -46,6 +47,7 @@
   padding: 30px;
   border-radius: 10px;
   text-align: left;
+  color: #49243E;
   background: rgba(255, 255, 255, 0.1);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }

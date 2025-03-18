@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../stylefiles/Hero.css';
+import pic1 from '../../assets/pic1.png'; 
 
 const Hero = () => {
   return (
@@ -12,7 +13,7 @@ const Hero = () => {
           <p className="hero-description">Empowering businesses with cutting-edge technology solutions. From AI-driven automation to seamless cloud integration, we drive digital transformation tailored to your needs.</p>
         </div>
         <div className="hero-image right-half">
-          <img src="/assets/hero-image.jpg" alt="Viruzverse Solutions" />
+          <img src={pic1} alt="Viruzverse Solutions" />
         </div>
       </div>
     </section>
