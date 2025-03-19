@@ -1,6 +1,4 @@
 import React from 'react';
-import Header from './Header';
-import Footer from './Footer';
 import '../stylefiles/Courses.css';
 
 const Courses = () => {
@@ -15,7 +13,6 @@ const Courses = () => {
 
   return (
     <div className="courses-container">
-      <Header />
       
       <section className="courses-content">
         <div className="courses-heading">
@@ -32,7 +29,6 @@ const Courses = () => {
         </div>
       </section>
 
-      <Footer />
     </div>
   );
 };

@@ -77,14 +77,43 @@
   }
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
+/* Small Devices (Phones) */
+@media (max-width: 480px) {
   .courses-list {
     flex-direction: column;
     align-items: center;
+    gap: 15px; /* Reduce gap for compact screens */
   }
 
   .course-box {
-    width: 90%;
+    width: 95%; /* Almost full width */
+    padding: 50px; /* Reduce padding */
+  }
+
+  .courses-heading h1 {
+    font-size: 2rem; /* Reduce font size */
+    right: 10px;
+  }
+
+  .course-box h2 {
+    font-size: 1.4rem;
+  }
+
+  .course-box p {
+    font-size: 1rem;
   }
 }
+
+/* Medium Devices (Tablets) */
+@media (max-width: 1024px) {
+  .courses-list {
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+  }
+
+  .course-box {
+    width: 45%; /* Maintain 2-column structure */
+  }
+}
+
+

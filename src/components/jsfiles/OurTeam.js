@@ -1,13 +1,10 @@
 import React from "react";
-import Header from './Header';
-import Footer from './Footer';
 import "../stylefiles/OurTeam.css";
 import teamMembers from "./teamData"; // Assuming you have team data in a separate file
 
 const OurTeam = () => {
   return (
     <>
-      <Header /> {/* Include Header at the top */}
       <div className="our-team-container">
         <h1>Meet Our Team</h1>
         <p className="team-intro">
@@ -26,7 +23,6 @@ const OurTeam = () => {
           ))}
         </div>
       </div>
-      <Footer /> {/* Include Footer at the bottom */}
     </>
   );
 };

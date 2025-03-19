@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import "../stylefiles/Contact.css";
-import Header from "./Header";
-import Footer from "./Footer";
 import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 
 const Contact = () => {
@@ -44,7 +42,7 @@ const Contact = () => {
 
   return (
     <>
-      <Header />
+     
       <div className="contact-wrapper">
         <h1 className="contact-heading">🚀 Let's Connect & Create Something Amazing! 🌟</h1>
         <p className="contact-subheading">
@@ -137,7 +135,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
-      <Footer />
+     
     </>
   );
 };

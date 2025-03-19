@@ -1,6 +1,4 @@
 import React from 'react';
-import Header from './Header';
-import Footer from './Footer';
 import '../stylefiles/Services.css';
 
 const Services = () => {
@@ -29,7 +27,6 @@ const Services = () => {
 
   return (
     <div className="services-container">
-      <Header />
       <div className="services-content">
         <h1>Our Services</h1>
         <p>Explore the services we offer to help your business grow.</p>
@@ -42,7 +39,6 @@ const Services = () => {
           ))}
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

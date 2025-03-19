@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import '../stylefiles/Footer.css';
 import { FaLinkedin, FaInstagram, FaWhatsapp, FaEnvelope, FaYoutube } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
-
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -17,6 +15,13 @@ const Footer = () => {
   });
   const [status, setStatus] = useState('');
 
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const handleInstagramClick = () => {
     window.open('https://www.instagram.com/viruzverse.tech?igsh=MXUyemZ6dWlkbTM1aQ==', '_blank');
   };
@@ -26,12 +31,13 @@ const Footer = () => {
   };
 
   const handleWhatsAppClick = (e) => {
-    e.preventDefault(); // Prevent default link behavior
-    const whatsappNumber = phoneNumber.replace(/\D/g, ''); // Remove non-numeric characters
-    const message = encodeURIComponent("Hello, I would like to connect with you!"); // Pre-filled message
+    e.preventDefault();
+    const whatsappNumber = phoneNumber.replace(/\D/g, '');
+    const message = encodeURIComponent("Hello, I would like to connect with you!");
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
     window.open(whatsappUrl, '_blank');
   };
+
   const handleYouTubeClick = () => {
     window.open('https://www.youtube.com/@Viruzverse', '_blank');
   };
@@ -87,22 +93,22 @@ const Footer = () => {
         <div className="footer-section">
           <h3>Quick Links</h3>
           <ul>
-         <li><Link to="/">Home</Link></li>
-         <li><Link to="/about">About</Link></li>
-         <li><Link to="/services">Services</Link></li>
-         <li><Link to="/courses">Courses</Link></li>
-         <li><Link to="/contact">Contact</Link></li>
-          <li><Link to="/team">Our Team</Link></li>
-</ul>
-
+            <li><button onClick={() => scrollToSection('home')} className="footer-link">Home</button></li>
+            <li><button onClick={() => scrollToSection('about')} className="footer-link">About</button></li>
+            <li><button onClick={() => scrollToSection('services')} className="footer-link">Services</button></li>
+            <li><button onClick={() => scrollToSection('courses')} className="footer-link">Courses</button></li>
+            <li><button onClick={() => scrollToSection('contact')} className="footer-link">Contact</button></li>
+            <li><button onClick={() => scrollToSection('team')} className="footer-link">Our Team</button></li>
+          </ul>
         </div>
         
         <div className="footer-section">
           <h3>Contact Info</h3>
           <ul>
             <li>
-            <a href="#" onClick={handleWhatsAppClick} className="contact-link">
-  <FaWhatsapp className="contact-icon" /> {phoneNumber}</a>
+              <a href="#" onClick={handleWhatsAppClick} className="contact-link">
+                <FaWhatsapp className="contact-icon" /> {phoneNumber}
+              </a>
             </li>
             <li>
               <a href="#" onClick={handleEmailClick} className="contact-link">
@@ -187,12 +193,12 @@ const Footer = () => {
               {status === 'success' && <p className="success-message">Email sent successfully!</p>}
               {status === 'error' && <p className="error-message">Failed to send email. Please try again.</p>}
             </form>
-        </div>
+          </div>
         </div>
       )}
-       <div className="footer-bottom">
-          <p>&copy; {currentYear} ViruzVerse. All rights reserved.</p>
-        </div>
+      <div className="footer-bottom">
+        <p>&copy; {currentYear} ViruzVerse. All rights reserved.</p>
+      </div>
     </footer>
   );
 };

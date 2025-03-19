@@ -1,24 +1,62 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './components/jsfiles/Home';
+import React, { useEffect } from 'react';
+import Header from './components/jsfiles/Header';
+import Hero from './components/jsfiles/Hero';
 import About from './components/jsfiles/About';
 import Services from './components/jsfiles/Services';
 import Courses from './components/jsfiles/Courses';
-import Contact from './components/jsfiles/Contact';
 import OurTeam from './components/jsfiles/OurTeam';
+import Contact from './components/jsfiles/Contact';
+import Footer from './components/jsfiles/Footer';
+import './App.css';
 
 function App() {
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    document.querySelectorAll('section').forEach(section => {
+      observer.observe(section);
+    });
+
+    return () => {
+      document.querySelectorAll('section').forEach(section => {
+        observer.unobserve(section);
+      });
+    };
+  }, []);
+
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/courses" element={<Courses />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/team" element={<OurTeam />} />
-      </Routes>
-    </Router>
+    <div className="app">
+      <Header />
+      <main className="main-content">
+        <section id="home" className="visible">
+          <Hero />
+        </section>
+        <section id="about">
+          <About />
+        </section>
+        <section id="services">
+          <Services />
+        </section>
+        <section id="courses">
+          <Courses />
+        </section>
+        <section id="team">
+          <OurTeam />
+        </section>
+        <section id="contact">
+          <Contact />
+        </section>
+      </main>
+      <Footer />
+    </div>
   );
 }
 

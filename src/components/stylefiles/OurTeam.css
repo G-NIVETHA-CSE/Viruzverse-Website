@@ -163,16 +163,73 @@ li a {
   padding-inline-start: 1rem;
 }
 
-@media screen and (max-width: 768px) {
-  .team-card {
-    max-width: 100%; /* Full width on smaller screens */
+/* Small Devices (Phones) */
+@media (max-width: 480px) {
+  .our-team-container {
+    padding: 20px 10px; /* Reduce padding for small screens */
+    text-align: center;
   }
 
   .team-intro {
-    padding-left: 5%; /* Adjust text padding */
+    font-size: 1rem; /* Adjust font size */
+    padding: 0 5%; /* Avoid text overflow */
+    line-height: 1.5;
+  }
+
+  .team-members {
+    flex-direction: column; /* Stack items */
+    gap: 20px; /* Reduce gap for compact layout */
+    width: 100%;
+  }
+
+  .team-card {
+    width: 90%; /* Almost full width */
+    padding: 15px; /* Reduce padding */
+    margin: 0 auto; /* Center align */
+  }
+
+  .team-photo {
+    width: 80px;
+    height: 80px;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+  }
+
+  .team-experience {
+    font-size: 0.9rem;
+    padding: 5px;
   }
 
   .card-list {
-    grid-template-columns: 1fr; /* Single column layout on small screens */
+    grid-template-columns: 1fr; /* Single column */
+    width: 100%;
   }
 }
+@media (max-width: 1024px) {
+  .team-members {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .team-card {
+    width: 45%; /* Maintain 2-column layout */
+  }
+
+  .team-photo {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+/* Large Screens (Desktops & Laptops) */
+/* @media (min-width: 1200px) {
+  .our-team-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+} */

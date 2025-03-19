@@ -13,7 +13,7 @@ const Hero = () => {
           <p className="hero-description">Empowering businesses with cutting-edge technology solutions. From AI-driven automation to seamless cloud integration, we drive digital transformation tailored to your needs.</p>
         </div>
         <div className="hero-image right-half">
-          <img src={pic1} alt="Viruzverse Solutions" />
+          <img src={pic1} alt="Viruzverse Solutions" className="responsive-image" />
         </div>
       </div>
     </section>

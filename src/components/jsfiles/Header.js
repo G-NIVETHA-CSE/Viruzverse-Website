@@ -1,18 +1,32 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
 import '../stylefiles/Header.css';
-import logo from "../../assets/logo.png";
-import logo2 from "../../assets/logo2.png";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const location = useLocation(); // Get the current route path
+  const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
     const handleScroll = () => {
+      // Header background effect
       setIsScrolled(window.scrollY > 50);
+
+      // Update active section based on scroll position
+      const sections = ['home', 'about', 'services', 'courses', 'team', 'contact'];
+      const currentSection = sections.find(section => {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          return rect.top <= 100 && rect.bottom >= 100;
+        }
+        return false;
+      });
+
+      if (currentSection) {
+        setActiveSection(currentSection);
+      }
     };
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -21,64 +35,72 @@ const Header = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setIsMenuOpen(false);
+    }
+  };
+
   return (
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="nav-container">
-        <Link to="/" className="logo">
-        <img src={logo2} alt="Logo Symbol" className="logo-symbol" />
-        <img src={logo} alt="Logo" className="logo-img" />
-        </Link>
+      <div className="logo" onClick={() => scrollToSection('home')}>
+      <h1 className="logo-text">VIRUZVERSE</h1>
+    </div>
 
         <nav className={isMenuOpen ? 'active' : ''}>
           <ul>
-            <li>
-              <Link 
-                to="/" 
-                className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}
-              >
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link 
-                to="/about" 
-                className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`}
-              >
-                About
-              </Link>
-            </li>
-            <li>
-              <Link 
-                to="/services" 
-                className={`nav-link ${location.pathname === '/services' ? 'active' : ''}`}
-              >
-                Services
-              </Link>
-            </li>
-            <li>
-              <Link 
-                to="/courses" 
-                className={`nav-link ${location.pathname === '/courses' ? 'active' : ''}`}
-              >
-                Courses
-              </Link>
-            </li>
-            <li>
-              <Link 
-                to="/contact" 
-                className={`nav-link ${location.pathname === '/contact' ? 'active' : ''}`}
-              >
-                Contact
-              </Link>
-            </li>
-            <li>
-              <Link 
-                to="/team" 
-                className={`nav-link ${location.pathname === '/team' ? 'active' : ''}`}
-              >
-                Our Team
-              </Link>
-            </li>
+          <li>
+  <button 
+    onClick={() => scrollToSection('home')}
+    className={`nav-link ${activeSection === 'home' ? 'active' : ''}`}
+  >
+    Home
+  </button>
+</li>
+<li>
+  <button 
+    onClick={() => scrollToSection('about')}
+    className={`nav-link ${activeSection === 'about' ? 'active' : ''}`}
+  >
+    About
+  </button>
+</li>
+<li>
+  <button 
+    onClick={() => scrollToSection('services')}
+    className={`nav-link ${activeSection === 'services' ? 'active' : ''}`}
+  >
+    Services
+  </button>
+</li>
+<li>
+  <button 
+    onClick={() => scrollToSection('courses')}
+    className={`nav-link ${activeSection === 'courses' ? 'active' : ''}`}
+  >
+    Courses
+  </button>
+</li>
+<li>
+  <button 
+    onClick={() => scrollToSection('team')}
+    className={`nav-link ${activeSection === 'team' ? 'active' : ''}`}
+  >
+    Our Team
+  </button>
+</li>
+<li>
+  <button 
+    onClick={() => scrollToSection('contact')}
+    className={`nav-link ${activeSection === 'contact' ? 'active' : ''}`}
+  >
+    Contact
+  </button>
+</li>
+
           </ul>
         </nav>
 

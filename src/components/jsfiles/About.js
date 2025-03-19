@@ -1,12 +1,9 @@
 import React from 'react';
-import Header from './Header';
-import Footer from './Footer';
 import '../stylefiles/About.css';
 
 const About = () => {
   return (
     <div className="about-container">
-      <Header />
 
       <section className="about-content">
         <div className="about-heading">
@@ -57,8 +54,6 @@ const About = () => {
           <h3>"Innovation distinguishes between a leader and a follower." – Steve Jobs</h3>
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 };
