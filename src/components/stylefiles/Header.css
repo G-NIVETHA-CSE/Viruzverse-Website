@@ -32,6 +32,12 @@
   cursor: pointer;
 }
 
+.logo-img {
+  width: 50px;  /* Adjust size as needed */
+  height: auto;
+  margin-top: -20px;
+}
+
 .logo-text {
   font-family: 'Poppins', sans-serif;
   font-size: 1.5rem;
@@ -46,24 +52,15 @@ nav {
 }
 
 nav ul {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 nav ul li {
-    margin: 0 10px;
+  margin: 0 10px;
 }
-
-nav ul li a {
-    text-decoration: none;
-    padding: 10px 15px;
-    background-color: white;
-    border-radius: 5px;
-    display: inline-block;
-}
-
 
 .nav-link {
   font-family: 'Inter', sans-serif;
@@ -77,25 +74,16 @@ nav ul li a {
   cursor: pointer;
   position: relative;
 }
+
 .nav-link:hover {
   color: #BB8493;
 }
+
 .nav-link.active {
   font-weight: 500;
 }
-.nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: #BB8493;
-  transition: width 0.3s ease;
-}
 
-
-/* Menu Toggle for Mobile */
+/* Mobile Menu Toggle */
 .menu-toggle {
   display: none;
   background: none;
@@ -177,5 +165,9 @@ nav ul li a {
 
   .nav-link {
     font-size: 1.2rem;
+  }
+
+  .logo-img {
+    width: 40px;  /* Adjust for smaller screens */
   }
 }

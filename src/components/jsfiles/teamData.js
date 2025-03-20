@@ -15,7 +15,7 @@ import Intern12 from '../../assets/intern12.png';
 const teamMembers = [
     {
       name: "VishwaDharan",
-      role: "CEO",
+      role: "CEO & Co-Founder",
       photo: CEO,
       experience: "",
     },
@@ -65,7 +65,7 @@ const teamMembers = [
       name: "Mohana Swara Raj N",
       role: "Social Intern",
       photo: Intern7,
-      experience: "Feel comfortable working in the company",
+      experience: "I really happy to work with viruzverse and gain lot of input from you guys . I am glad to have a opportunity to collaborately work with the team.",
     },
     {
       name: "Mohammed Safil S",
@@ -92,10 +92,10 @@ const teamMembers = [
       experience: "",
     },
     {
-      name: "",
-      role: "",
+      name: "Rishi D",
+      role: "VR Intern",
       photo: Intern12,
-      experience: "",
+      experience: "Viruzverse's VR integration can revolutionize immersive experiences, but optimizing user interaction and performance will be key to success. Focus on seamless usability and engaging content to maximize impact.",
     },
   ];
   

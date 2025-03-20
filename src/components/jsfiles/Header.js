@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../stylefiles/Header.css';
+import logo from '../../assets/logo1.png';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -8,10 +9,7 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Header background effect
       setIsScrolled(window.scrollY > 50);
-
-      // Update active section based on scroll position
       const sections = ['home', 'about', 'services', 'courses', 'team', 'contact'];
       const currentSection = sections.find(section => {
         const element = document.getElementById(section);
@@ -21,7 +19,6 @@ const Header = () => {
         }
         return false;
       });
-
       if (currentSection) {
         setActiveSection(currentSection);
       }
@@ -46,64 +43,24 @@ const Header = () => {
   return (
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="nav-container">
-      <div className="logo" onClick={() => scrollToSection('home')}>
-      <h1 className="logo-text">VIRUZVERSE</h1>
-    </div>
-
+        <div className="logo" onClick={() => scrollToSection('home')}>
+          <img src={logo} alt="Logo" className="logo-img" />
+          <h1 className="logo-text">VIRUZVERSE</h1>
+        </div>
         <nav className={isMenuOpen ? 'active' : ''}>
           <ul>
-          <li>
-  <button 
-    onClick={() => scrollToSection('home')}
-    className={`nav-link ${activeSection === 'home' ? 'active' : ''}`}
-  >
-    Home
-  </button>
-</li>
-<li>
-  <button 
-    onClick={() => scrollToSection('about')}
-    className={`nav-link ${activeSection === 'about' ? 'active' : ''}`}
-  >
-    About
-  </button>
-</li>
-<li>
-  <button 
-    onClick={() => scrollToSection('services')}
-    className={`nav-link ${activeSection === 'services' ? 'active' : ''}`}
-  >
-    Services
-  </button>
-</li>
-<li>
-  <button 
-    onClick={() => scrollToSection('courses')}
-    className={`nav-link ${activeSection === 'courses' ? 'active' : ''}`}
-  >
-    Courses
-  </button>
-</li>
-<li>
-  <button 
-    onClick={() => scrollToSection('team')}
-    className={`nav-link ${activeSection === 'team' ? 'active' : ''}`}
-  >
-    Our Team
-  </button>
-</li>
-<li>
-  <button 
-    onClick={() => scrollToSection('contact')}
-    className={`nav-link ${activeSection === 'contact' ? 'active' : ''}`}
-  >
-    Contact
-  </button>
-</li>
-
+            {['home', 'about', 'services', 'courses', 'team', 'contact'].map(section => (
+              <li key={section}>
+                <button 
+                  onClick={() => scrollToSection(section)}
+                  className={`nav-link ${activeSection === section ? 'active' : ''}`}
+                >
+                  {section.charAt(0).toUpperCase() + section.slice(1)}
+                </button>
+              </li>
+            ))}
           </ul>
         </nav>
-
         <button className="menu-toggle" onClick={handleMenuToggle}>
           <span className={`hamburger ${isMenuOpen ? 'active' : ''}`}></span>
         </button>
