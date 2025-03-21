@@ -19,50 +19,15 @@ const Contact = () => {
   };
 
   // ✅ Handle Form Submission
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setStatus("Sending...");
 
-    // Google Form URL
-    const googleFormURL = "https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse";
-    const googleFormData = new URLSearchParams({
-      "entry.123456789": formData.name, // Replace with actual field IDs
-      "entry.987654321": formData.email,
-      "entry.543210987": formData.phone,
-      "entry.678901234": formData.subject,
-      "entry.135792468": formData.message,
-    });
+    const subject = encodeURIComponent(formData.subject);
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\n\nMessage:\n${formData.message}`
+    );
 
-    try {
-      await fetch(googleFormURL, {
-        method: "POST",
-        mode: "no-cors",
-        body: googleFormData,
-      });
-
-      // ✅ Redirect to WhatsApp after successful submission
-      sendToWhatsApp();
-    } catch (error) {
-      console.error("Error:", error);
-      setStatus("❌ Failed to send message. Please try again.");
-    }
-  };
-
-  // ✅ Send Message to WhatsApp
-  const sendToWhatsApp = () => {
-    const whatsappNumber = "919659008000"; // Your WhatsApp number (without +)
-    const message = encodeURIComponent(`
-      Name: ${formData.name}
-      Email: ${formData.email}
-      Phone: ${formData.phone}
-      Subject: ${formData.subject}
-      Message: ${formData.message}
-    `);
-
-    window.open(`https://wa.me/${whatsappNumber}?text=${message}`, "_blank");
-
-    setStatus("✅ Message sent successfully!");
-    setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
+    window.location.href = `mailto:contact@viruzverse.tech?subject=${subject}&body=${body}`;
   };
 
   return (
