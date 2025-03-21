@@ -6,9 +6,12 @@ const Courses = () => {
     { title: '🚀 Mastering Web Development', description: 'Become a full-stack developer with HTML, CSS, JavaScript, React, and more!' },
     { title: '🤖 AI & Machine Learning', description: 'Explore deep learning, neural networks, and AI-driven solutions.' },
     { title: '📱 Mobile App Development', description: 'Learn to build cross-platform apps with Flutter & React Native.' },
-    { title: '🔒 Cyber Security & Ethical Hacking', description: 'Protect digital assets and learn penetration testing techniques.' },
+    { title: '🤖 Embedded IoT', description: 'Explore IoT systems, embedded programming, and real-time device communication.' },
     { title: '☁️ Cloud Computing & DevOps', description: 'Master AWS, Docker, Kubernetes, and CI/CD pipelines.' },
     { title: '🎨 UI/UX Design & Prototyping', description: 'Create stunning user experiences with Figma, Adobe XD & UX principles.' },
+    { title: '🕶️ Virtual Reality Development', description: 'Create immersive VR experiences using Unity, Unreal Engine & WebXR.' },
+    { title: '📊 Data Science & Analytics', description: 'Analyze big data, build predictive models & master visualization techniques.' },
+    { title: '🎮 Game Development', description: 'Design and develop games using Unity, C#, and game mechanics.' },
   ];
 
   return (

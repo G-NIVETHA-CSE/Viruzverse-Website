@@ -70,8 +70,8 @@
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  margin-bottom: 1.5rem;
   line-height: 1.2;
+  margin-bottom: 0.8rem;
 }
 
 .hero-description {
@@ -80,7 +80,7 @@
   color: rgb(72, 3, 72);
   line-height: 1.7;
   opacity: 0.95;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 /* Image should take right half */
@@ -96,6 +96,14 @@
   height: auto;
   object-fit: contain;
   transition: transform 0.3s ease;
+}
+
+/* Extra Large Screens (Desktops & Ultra-wide) */
+@media (min-width: 1600px) {
+  .hero-content {
+    width: 80%;
+    max-width: 1600px;
+  }
 }
 
 /* Medium Screens (Tablets) */
@@ -116,57 +124,89 @@
     }
   }
   
-  /* Small Screens (Mobile) */
-  @media (max-width: 768px) {
-    .hero-content {
-      width: 100%;
-      padding: 3vh 1.5rem;
-      gap: 2rem;
-      text-align: center;
-      left: -20px;
-    }
-  
-    .left-half, .right-half {
-      max-width: 90%;
-    }
-  
-    .hero-line {
-      font-size: 16px;
-    }
-  
-    .holo-glow {
-      font-size: 28px;
-    }
-  
-    .hero-description {
-      font-size: 14px;
-    }
-  
-    .hero-image img {
-      max-width: 300px;
-    }
+  /* Mobile Screens (max-width: 768px) */
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto; /* Allow it to fit content */
   }
-  
-  /* Extra Small Screens */
-  @media (max-width: 480px) {
-    .hero-content {
-      padding: 2vh 1rem;
-      gap: 1.5rem;
-    }
-  
-    .hero-line {
-      font-size: 14px;
-    }
-  
-    .holo-glow {
-      font-size: 24px;
-    }
-  
-    .hero-description {
-      font-size: 13px;
-    }
-  
-    .hero-image img {
-      max-width: 250px;
-    }
+  .hero-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 5vh 1.5rem;
+    gap: 2rem;
+    top: 0; /* Fix the negative top position */
   }
+
+  .left-half{
+    max-width: 100%;
+    text-align: center;
+    margin-top: 5vh;
+    margin-right: 20px;
+  }
+  .right-half{
+    max-width: 100%;
+    text-align: center;
+    margin-top: -100%;
+  }
+
+  .holo-glow {
+    font-size: clamp(28px, 6vw, 36px);
+  }
+
+  .hero-description {
+    font-size: 14px;
+  }
+
+  .hero-image img {
+    max-width: 90%;
+    height: auto;
+  }
+}
+
+/* Extra Small Screens (max-width: 480px) */
+@media (max-width: 480px) {
+  .hero-content {
+    padding: 3vh 1rem;
+    gap: 1rem;
+  }
+
+  .hero-line {
+    font-size: 14px;
+  }
+
+  .holo-glow {
+    font-size: 22px;
+  }
+
+  .hero-description {
+    font-size: 13px;
+  }
+
+  .hero-image img {
+    max-width: 80%;
+  }
+}
+
+/* Ultra Small Screens (max-width: 360px) */
+@media (max-width: 360px) {
+  .hero-content {
+    padding: 2vh 0.5rem;
+  }
+
+  .hero-line {
+    font-size: 12px;
+  }
+
+  .holo-glow {
+    font-size: 20px;
+  }
+
+  .hero-description {
+    font-size: 12px;
+  }
+
+  .hero-image img {
+    max-width: 75%;
+  }
+}

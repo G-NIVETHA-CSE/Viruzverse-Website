@@ -10,7 +10,7 @@
 
 /* About Heading */
 .about-heading h1 {
-  font-size: 2.8rem;
+  font-size: 2.5rem;
   font-weight: 700;
   color: whitesmoke;
   text-transform: uppercase;
@@ -30,8 +30,8 @@
 
 /* About Boxes */
 .about-box {
-  width: 300px;
-  padding: 25px;
+  max-width: 90%;
+  padding: 20px;
   border-radius: 12px;
   box-shadow: 0px 5px 20px rgba(73, 36, 62, 0.3);
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background 0.3s ease-in-out;
@@ -65,26 +65,26 @@
 
 /* Box Titles */
 .about-box h2 {
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: whitesmoke;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   font-weight: bold;
   font-family: 'Poppins', sans-serif;
 }
 
 /* Box Text */
 .about-box p {
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #DBAFA0;
   margin-top: 10px;
-  line-height: 1.6;
+  line-height: 1.5;
   font-family: 'Inter', sans-serif;
 }
 
 /* Quote Section */
 .quote {
-  margin-top: 50px;
-  font-size: 1.6rem;
+  margin-top: 30px;
+  font-size: 1.4rem;
   font-style: italic;
   color: #DBAFA0;
   opacity: 0;
@@ -105,25 +105,46 @@
   }
 }
 
-/* Responsive Design */
+/* ✅ Improved Responsive Design */
 @media (max-width: 768px) {
   .about-heading h1 {
-    font-size: 2.2rem;
-    right: 14px;
+    font-size: 2rem;
+    margin-bottom: 20px;
   }
 
   .about-section {
     flex-direction: column;
     align-items: center;
+    padding: 15px;
   }
 
   .about-box {
-    width: 90%;
-    padding: 10px;
+    width: 100%;
+    padding: 15px;
   }
 
   .quote {
-    font-size: 1.4rem;
-    margin-top: 30px;
+    font-size: 1.2rem;
+    margin-top: 20px;
+    padding: 0 10px;
+  }
+}
+
+/* ✅ Further Adjustments for Smaller Screens */
+@media (max-width: 480px) {
+  .about-heading h1 {
+    font-size: 1.8rem;
+    margin-right: 42px;
+  }
+
+  .about-box {
+    padding: 12px;
+    font-size: 0.9rem;
+    margin-right: 45px;
+  }
+
+  .quote {
+    font-size: 1rem;
+    margin-right: 42px;
   }
 }

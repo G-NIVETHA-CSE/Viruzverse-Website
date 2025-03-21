@@ -1,43 +1,47 @@
 const express = require("express");
 const cors = require("cors");
 const nodemailer = require("nodemailer");
-require("dotenv").config();
+require("dotenv").config(); // Load environment variables
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Nodemailer transporter
+// Ensure environment variables are loaded correctly
+if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS || !process.env.SMTP_HOST) {
+  console.error("Missing required environment variables.");
+  process.exit(1);
+}
+
 const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
-  port: 587, // Use 587 instead of 465
-  secure: false, // False for 587
+  service: "gmail", // Use "gmail" for Gmail accounts
   auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
-  },
-  tls: {
-    rejectUnauthorized: false, // Fixes certificate issues
+    user: process.env.EMAIL_USER, // Your email
+    pass: process.env.EMAIL_PASS, // Your email password or App Password
   },
 });
 
-
 // Email API Route
 app.post("/api/send-email", async (req, res) => {
+  console.log("Received email request:", req.body); // Debug log
+
   const { name, email, subject, message } = req.body;
 
+  // Validate input
   if (!name || !email || !subject || !message) {
     return res.status(400).json({ message: "All fields are required." });
   }
 
   try {
-    await transporter.sendMail({
-      from: `"${name}" <${email}>`,
-      to: process.env.EMAIL_USER, // Your business email
+    const info = await transporter.sendMail({
+      from: `"${name}" <${process.env.EMAIL_USER}>`, // Zoho Mail as sender
+      replyTo: email, // Set user's email as reply-to
+      to: process.env.EMAIL_USER, // Your Zoho email
       subject: `New Contact Form Submission: ${subject}`,
       text: `From: ${name} (${email})\n\n${message}`,
     });
 
+    console.log("Email sent:", info.response); // Debug log
     res.status(200).json({ message: "Email sent successfully!" });
   } catch (error) {
     console.error("Email send error:", error);

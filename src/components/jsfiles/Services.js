@@ -23,8 +23,11 @@ const Services = () => {
       title: 'Cloud Services',
       description: 'We provide scalable cloud solutions to optimize your business operations.',
     },
+    {
+      title: 'VR Services',
+      description: 'We create immersive virtual reality experiences for various industries and applications.',
+    },
   ];
-
   return (
     <div className="services-container">
       <div className="services-content">
