@@ -1,52 +1,77 @@
-const express = require("express");
-const nodemailer = require("nodemailer");
-const cors = require("cors");
 require("dotenv").config();
+const express = require("express");
+const cors = require("cors");
+const nodemailer = require("nodemailer");
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.use(cors({
-  origin: "http://localhost:3000", // Allow only your frontend to access
-  credentials: true,
-}));
+// app.use(
+//   cors({
+//     origin: "https://your-frontend-domain.com", 
+//     methods: "GET,POST",
+//     credentials: true,
+//   })
+// );
 
+
+// ✅ Nodemailer Transporter Setup
 const transporter = nodemailer.createTransport({
-  host: process.env.SMTP_HOST,
+  service: "gmail",
+  host: "smtp.gmail.com",
   port: 587,
   secure: false,
+  requireTLS: true,
   auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASS,
+    user: process.env.GMAIL_EMAIL, // Your official email (e.g., viruzverse@gmail.com)
+    pass: process.env.GMAIL_PASSWORD, // App Password (not your direct Gmail password)
   },
 });
 
-app.post("/api/send-email", async (req, res) => {
+// ✅ Contact Page - Send Email Route
+app.post("/send-email", async (req, res) => {
   const { name, email, phone, subject, message } = req.body;
 
-  try {
-    let info = await transporter.sendMail({
-      from: '"Viruzverse Support" <contact@viruzverse.tech>',
-      to: "recipient@example.com", // Change to your recipient email
-      subject: subject,
-      text: `
-        Name: ${name}
-        Email: ${email}
-        Phone: ${phone}
-        Message: ${message}
-      `,
-    });
+  const mailOptions = {
+    from: `"${name}" <${process.env.GMAIL_EMAIL}>`, // Gmail forces authentication email
+    replyTo: email, // Replies go to the user
+    to: "viruzversesolution@gmail.com", // Official email
+    subject: subject,
+    text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`,
+  };
 
-    console.log("Email sent: ", info.messageId);
-    res.status(200).json({ message: "Email sent successfully!" });
+  try {
+    await transporter.sendMail(mailOptions);
+    res.json({ success: true, message: "✅ Email sent successfully!" });
   } catch (error) {
-    console.error("Error sending email: ", error);
-    res.status(500).json({ message: "Failed to send email." });
+    console.error("❌ Error sending email:", error);
+    res.status(500).json({ success: false, message: "❌ Failed to send email." });
   }
 });
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+// ✅ Career Page - Job Application Route
+app.post("/apply-job", async (req, res) => {
+  const { name, email, message, github, linkedin, resume, jobTitle } = req.body;
+
+  const mailOptions = {
+    from: `"${name}" <${process.env.GMAIL_EMAIL}>`,
+    replyTo: email,
+    to: "viruzversesolution@gmail.com",
+    subject: `Job Application for ${jobTitle}`,
+    text: `Name: ${name}\nEmail: ${email}\n\nJob Title: ${jobTitle}\nGitHub: ${github}\nLinkedIn: ${linkedin}\nResume: ${resume}\n\nMessage:\n${message}`,
+  };
+
+  try {
+    await transporter.sendMail(mailOptions);
+    res.json({ success: true, message: "✅ Job application submitted successfully!" });
+  } catch (error) {
+    console.error("❌ Error sending job application:", error);
+    res.status(500).json({ success: false, message: "❌ Failed to send job application." });
+  }
 });
+
+
+// Start the server
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));

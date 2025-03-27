@@ -1,18 +1,18 @@
 /* Color Palette */
 :root {
-  --primary-dark: #49243E;
-  --secondary-dark: #704264;
-  --accent: #BB8493;
-  --light: #DBAFA0;
-  --text-white: #FFFFFF;
+  --primary-dark: #2E4053;
+  --secondary-dark: #1C2833;
+  --accent: #AAB7B8;
+  --light: #BDC3C7;
+  --text-white: #F4F6F6;
 }
 
 /* Contact Page Styling */
 .contact-wrapper {
   text-align: center;
   padding: 50px 20px;
-  background: linear-gradient(135deg, var(--accent), var(--secondary-dark));
-  color: var(--text-white);
+  background: linear-gradient(135deg, var(--text-white), var(--light));
+  color: var(--primary-dark);
   overflow-x: hidden;
 }
 
@@ -21,13 +21,14 @@
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 10px;
+  color: var(--secondary-dark);
 }
 
 .contact-subheading {
   font-size: 1.2rem;
   margin-bottom: 30px;
   opacity: 0.8;
-  color: #49243E;
+  color: var(--primary-dark);
 }
 
 /* Contact Container */
@@ -38,7 +39,6 @@
   max-width: 900px;
   margin: auto;
   gap: 40px;
-  color: #49243E;
 }
 
 /* Left Section (Contact Info) */
@@ -47,21 +47,19 @@
   padding: 30px;
   border-radius: 10px;
   text-align: left;
-  color: #49243E;
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--accent);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Contact Info */
 .contact-left h2 {
   font-size: 1.5rem;
   margin-bottom: 10px;
-  color: var(--primary-dark);
+  color: var(--secondary-dark);
 }
 
 .contact-info p {
   font-size: 1rem;
-  color: var(--primary-dark);
+  color: var(--secondary-dark);
 }
 
 .info-item {
@@ -74,15 +72,15 @@
 .info-icon {
   font-size: 1.5rem;
   margin-right: 10px;
-  color: var(--light);
+  color: var(--primary-dark);
 }
 
 /* Right Section (Form) */
 .contact-right {
   flex: 1;
-  padding: 30px;
+  padding: 50px;
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--accent);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -109,17 +107,17 @@ input, textarea {
   border: none;
   border-radius: 5px;
   font-size: 1rem;
-  background: rgba(255, 255, 255, 0.2);
-  color: var(--text-white);
+  background: var(--text-white);
+  color: var(--secondary-dark);
 }
 
 input::placeholder, textarea::placeholder {
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--primary-dark);
 }
 
 .submit-btn {
-  background: var(--light);
-  color: var(--primary-dark);
+  background: var(--secondary-dark);
+  color: var(--text-white);
   padding: 12px;
   font-size: 1.2rem;
   font-weight: bold;
@@ -130,20 +128,21 @@ input::placeholder, textarea::placeholder {
 }
 
 .submit-btn:hover {
-  background: #d89082;
+  background: var(--primary-dark);
 }
 
 .status-message {
   margin-top: 10px;
   font-size: 1rem;
   font-weight: bold;
-  color: var(--text-white);
+  color: var(--secondary-dark);
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .contact-container {
     flex-direction: column;
+    margin-right: 3%;
   }
 
   .form-row {

@@ -15,24 +15,31 @@ const Contact = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
-    // Construct the Gmail mailto link
-    const mailtoLink = `https://mail.google.com/mail/?view=cm&fs=1&to=contact@viruzverse.tech&su=${encodeURIComponent(
-      formData.subject
-    )}&body=${encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\n\nMessage:\n${formData.message}`
-    )}`;
-
-    // Open Gmail in a new tab with pre-filled details
-    window.open(mailtoLink, "_blank");
+  
+    try {
+      const response = await fetch("http://localhost:5000/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+  
+      const data = await response.json();
+      if (data.success) {
+        alert("✅ Email sent successfully!");
+      } else {
+        alert("❌ Failed to send email. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error sending email:", error);
+      alert("❌ Something went wrong.");
+    }
   };
-
+  
   return (
     <div className="contact-wrapper">
       <h1 className="contact-heading">🚀 Let's Connect & Create Something Amazing! 🌟</h1>
-      <p className="contact-subheading">Have a project in mind? Need help? We're just a message away! 💬</p>
 
       <div className="contact-container">
         <div className="contact-left">

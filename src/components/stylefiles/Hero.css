@@ -3,7 +3,7 @@
 .hero {
   min-height: 100vh;
   position: relative;
-  background: linear-gradient(135deg,  #BB8493, #704264);
+  background: linear-gradient(135deg, #F4F6F6, #BDC3C7); /* Updated background */
   overflow: hidden;
   width: 100%;
 }
@@ -14,7 +14,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at center, transparent 0%, rgba(73, 36, 62, 0.15) 100%);
+  background: radial-gradient(circle at center, transparent 0%, rgba(44, 62, 80, 0.15) 100%);
 }
 
 .hero-content {
@@ -32,21 +32,19 @@
   top: -200px;
 }
 
-/* Content section - Left Side */
 .left-half {
   flex: 1;
   max-width: 50%;
-  margin-top: 30vh; /* Move content slightly up */
+  margin-top: 30vh;
 }
 
-/* Image section - Right Side */
 .right-half {
   flex: 1;
   max-width: 50%;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  margin-top: -30vh; /* Move image slightly up */
+  margin-top: -30vh;
 }
 
 .hero-text {
@@ -56,7 +54,7 @@
 .hero-line {
   font-family: 'Poppins', sans-serif;
   font-size: clamp(20px, 3vw, 24px);
-  color: #DBAFA0;
+  color: #1C2833; 
   margin-bottom: 1rem;
   font-weight: 500;
   letter-spacing: 0.5px;
@@ -66,7 +64,7 @@
   font-family: 'Poppins', sans-serif;
   font-size: clamp(36px, 5vw, 56px);
   font-weight: 700;
-  background: linear-gradient(to right, #ffffff 0%, #f8f8f8 20%, #ffffff 40%, #f5f5f5 60%, #ffffff 80%, #f8f8f8 100%);
+  background: linear-gradient(to right, #2E4053 0%, #1C2833 50%, #2E4053 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -77,13 +75,12 @@
 .hero-description {
   font-family: 'Inter', sans-serif;
   font-size: clamp(15px, 2vw, 17px);
-  color: rgb(72, 3, 72);
+  color: #2E4053;
   line-height: 1.7;
   opacity: 0.95;
   margin-bottom: 1rem;
 }
 
-/* Image should take right half */
 .hero-image {
   width: 100%;
   max-width: 100%;
@@ -98,7 +95,6 @@
   transition: transform 0.3s ease;
 }
 
-/* Extra Large Screens (Desktops & Ultra-wide) */
 @media (min-width: 1600px) {
   .hero-content {
     width: 80%;
@@ -106,7 +102,6 @@
   }
 }
 
-/* Medium Screens (Tablets) */
 @media (max-width: 1024px) {
     .hero-content {
       flex-direction: column;
@@ -122,12 +117,12 @@
     .hero-image img {
       max-width: 400px;
     }
-  }
+}
   
-  /* Mobile Screens (max-width: 768px) */
 @media (max-width: 768px) {
   .hero {
-    min-height: auto; /* Allow it to fit content */
+    min-height: auto; 
+    overflow: hidden;
   }
   .hero-content {
     flex-direction: column;
@@ -135,16 +130,17 @@
     text-align: center;
     padding: 5vh 1.5rem;
     gap: 2rem;
-    top: 0; /* Fix the negative top position */
+    top: 0; 
   }
 
-  .left-half{
+  .left-half {
     max-width: 100%;
     text-align: center;
     margin-top: 5vh;
-    margin-right: 20px;
+    margin-right: 25px;
   }
-  .right-half{
+
+  .right-half {
     max-width: 100%;
     text-align: center;
     margin-top: -100%;
@@ -160,7 +156,8 @@
 
   .hero-image img {
     max-width: 90%;
-    height: auto;
+    height: 80%;
+    margin-right: 50px;
   }
 }
 

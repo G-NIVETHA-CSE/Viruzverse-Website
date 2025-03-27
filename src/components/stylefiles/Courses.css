@@ -1,5 +1,5 @@
 .courses-container {
-  background: linear-gradient(135deg, #BB8493, #704264); /* Updated background */
+  background: linear-gradient(135deg, #F4F6F6, #BDC3C7); /* Updated background */
   min-height: 100vh;
   padding-top: 80px;
   text-align: center;
@@ -9,7 +9,7 @@
 .courses-heading h1 {
   font-size: 2.5rem;
   font-weight: bold;
-  color: whitesmoke; /* Soft Beige */
+  color: #1C2833; /* Dark color for contrast */
   text-transform: uppercase;
   margin-bottom: 30px;
   animation: fadeIn 1.5s ease-in-out;
@@ -25,28 +25,36 @@
 
 .course-box {
   width: 320px;
-  padding: 20px;
+  padding: 50px;
   border-radius: 10px;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  color: white;
+  color: #0c131a;
+  background: #AAB7B8; /* Default background */
 }
 
-/* Gradient backgrounds for different course boxes */
 .course-box:nth-child(1) {
-  background: linear-gradient(to right, #49243E, #704264); /* Dark Plum to Deep Purple */
+  background: linear-gradient(to right, #BDC3C7, #1C2833); /* Dark shades */
 }
 
 .course-box:nth-child(2) {
-  background: linear-gradient(to right, #704264, #BB8493); /* Deep Purple to Muted Pink */
+  background: linear-gradient(to right, #1C2833, #AAB7B8); /* Dark to light transition */
 }
 
 .course-box:nth-child(3) {
-  background: linear-gradient(to right, #BB8493, #DBAFA0); /* Muted Pink to Soft Beige */
+  background: linear-gradient(to right, #AAB7B8, #2E4053); /* Light transition */
 }
 
 .course-box:nth-child(4) {
-  background: linear-gradient(to right, #DBAFA0, #704264); /* Soft Beige to Deep Purple */
+  background: linear-gradient(to right, #BDC3C7, #2E4053); /* Light to dark transition */
+}
+
+.course-box:nth-child(5),
+.course-box:nth-child(6),
+.course-box:nth-child(7),
+.course-box:nth-child(8),
+.course-box:nth-child(9) {
+  background: linear-gradient(to right, #BDC3C7, #1C2833); /* Light to dark transition */
 }
 
 .course-box:hover {
@@ -57,12 +65,12 @@
 
 .course-box h2 {
   font-size: 1.6rem;
-  color: #DBAFA0; /* Soft Beige */
+  color: black; /* Dark color for contrast */
 }
 
 .course-box p {
   font-size: 1.1rem;
-  color: #f0f0f0;
+  color: white;
   margin-top: 10px;
 }
 
@@ -88,11 +96,12 @@
   .course-box {
     width: 95%; /* Almost full width */
     padding: 50px; /* Reduce padding */
+    margin-right: 21px;
   }
 
   .courses-heading h1 {
     font-size: 2rem; /* Reduce font size */
-    right: 10px;
+    right: 20px;
   }
 
   .course-box h2 {
@@ -115,5 +124,3 @@
     width: 45%; /* Maintain 2-column structure */
   }
 }
-
-

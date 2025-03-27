@@ -1,7 +1,7 @@
 /* Services.css */
 .services-container {
   font-family: "Poppins", sans-serif;
-  background: linear-gradient(135deg, #BB8493, #704264); /* Matching about.css */
+  background: linear-gradient(135deg, #F4F6F6, #BDC3C7); /* Updated background */
   text-align: center;
   padding: 80px 20px;
   min-height: 100vh;
@@ -16,7 +16,7 @@ h1 {
   font-size: 3.5rem;
   font-weight: 900;
   text-transform: uppercase;
-  color:  white; /* Soft Beige */
+  color: #2E4053; /* Updated color */
   letter-spacing: 3px;
   position: relative;
   animation: fadeIn 1s ease-in-out;
@@ -27,7 +27,7 @@ h1::after {
   display: block;
   width: 120px;
   height: 5px;
-  background: #BB8493; /* Muted Pink */
+  background: #AAB7B8; /* Updated color */
   margin: 14px auto 0;
   border-radius: 3px;
   animation: expandLine 1s ease-in-out;
@@ -46,7 +46,7 @@ h1::after {
 
 p {
   font-size: 1.4rem;
-  color: #704264; /* Soft Beige */
+  color: #1C2833; /* Updated color */
   max-width: 900px;
   line-height: 1.8;
   font-style: italic;
@@ -63,7 +63,7 @@ p {
 }
 
 .service-item {
-  background: linear-gradient(135deg, #BB8493 20%, #DBAFA0 100%); /* Muted Pink & Soft Beige */
+  background: linear-gradient(135deg, #AAB7B8 20%, #BDC3C7 100%); /* Updated gradient */
   color: #fff;
   padding: 40px;
   border-radius: 15px;
@@ -98,7 +98,7 @@ p {
 
 .service-item h2 {
   font-size: 2rem;
-  color: #49243E; /* Dark Plum */
+  color: #2E4053; /* Updated color */
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 1.5px;
@@ -111,14 +111,14 @@ p {
   display: block;
   width: 60px;
   height: 3px;
-  background: #49243E; /* Dark Plum */
+  background: #2E4053; /* Updated color */
   margin: 10px auto 0;
   border-radius: 2px;
 }
 
 .service-item p {
   font-size: 1.2rem;
-  color: #49243E; /* Dark Plum */
+  color: #1C2833; /* Updated color */
   font-style: italic;
   line-height: 1.6;
 }
@@ -130,11 +130,14 @@ p {
   }
 
   p {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+    margin-right: 10px;
   }
 
   .service-item {
     padding: 30px;
+    width: 240px;
+    margin-right: 10px;
   }
 
   .service-item h2 {

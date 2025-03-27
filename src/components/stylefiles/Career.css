@@ -1,0 +1,230 @@
+/* Career Page Styling */
+.career-container {
+    background: linear-gradient(135deg, var(--text-white), var(--light));
+    min-height: 100vh;
+    padding-top: 80px;
+    text-align: center;
+    overflow-x: hidden;
+  }
+  
+  .career-container h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--secondary-dark);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    animation: fadeIn 1.5s ease-in-out;
+  }
+  
+  .career-container p {
+    font-size: 1.2rem;
+    color: var(--primary-dark);
+    margin-bottom: 40px;
+    margin-left: 20%;
+  }
+
+  .career-container h2 {
+    color: var(--primary-dark);
+  }
+  
+  .job-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .job-item {
+    width: 320px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    background: linear-gradient(to right, var(--accent), var(--secondary-dark));
+    color: white;
+    text-align: center;
+  }
+  
+  .job-item:nth-child(odd) {
+    background: linear-gradient(to right, var(--light), var(--primary-dark));
+  }
+  
+  .job-item:nth-child(even) {
+    background: linear-gradient(to right, var(--primary-dark), var(--secondary-dark));
+  }
+  
+  .job-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    opacity: 0.9;
+  }
+  
+  .job-item h3 {
+    font-size: 1.6rem;
+    color: var(--text-white);
+  }
+  
+  .job-item p {
+    font-size: 1rem;
+    color: var(--text-white);
+    text-align: left;
+  }
+  
+  .job-item button {
+    background: var(--secondary-dark);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-top: 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .job-item button:hover {
+    background: var(--primary-dark);
+  }
+  
+  /* Modal Popup Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+  transform: translateY(0);
+  transition: all 0.3s ease;
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-content h2 {
+  color: var(--primary-dark);
+  margin-bottom: 10px;
+  font-size: 1.8rem;
+}
+
+.modal-content p {
+  color: var(--primary-dark);
+  margin-bottom: 20px;
+  font-size: 1rem;
+  text-align: center;
+  margin-left: 0;
+}
+
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.modal-content input,
+.modal-content textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border 0.3s ease;
+}
+
+.modal-content input:focus,
+.modal-content textarea:focus {
+  border-color: var(--primary-dark);
+  outline: none;
+}
+
+.modal-content textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.button-group button {
+  flex: 1;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button-group button:first-child {
+  background-color: #f1f1f1;
+  color: var(--primary-dark);
+  border: 1px solid #ddd;
+}
+
+.button-group button:first-child:hover {
+  background-color: #e1e1e1;
+}
+
+.button-group button:last-child {
+  background-color: var(--primary-dark);
+  color: white;
+  border: none;
+}
+
+.button-group button:last-child:hover {
+  background-color: var(--secondary-dark);
+}
+
+/* Responsive adjustments for modal */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 85%;
+    padding: 25px;
+  }
+  .modal-content input,
+.modal-content textarea {
+  padding: 10px;
+  width: 92%;
+}
+
+}
+
+@media (max-width: 480px) {
+  .modal-content {
+    width: 70%;
+    padding: 10px;
+    margin-right: 5%;
+  }
+  
+  .modal-content h2 {
+    font-size: 1.5rem;
+  }
+  
+  .button-group {
+    flex-direction: column;
+  }
+  
+  .button-group button {
+    width: 100%;
+  }
+}
+  

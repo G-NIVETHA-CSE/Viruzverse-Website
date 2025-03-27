@@ -51,6 +51,7 @@ const Footer = () => {
             <li><button onClick={() => scrollToSection('courses')} className="footer-link">Courses</button></li>
             <li><button onClick={() => scrollToSection('contact')} className="footer-link">Contact</button></li>
             <li><button onClick={() => scrollToSection('team')} className="footer-link">Our Team</button></li>
+            <li><button onClick={() => scrollToSection('career')} className="footer-link">Career</button></li>
           </ul>
         </div>
         

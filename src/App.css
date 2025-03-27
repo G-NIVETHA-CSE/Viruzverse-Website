@@ -1,8 +1,8 @@
 /* Base styles */
 .app {
   min-height: 100vh;
-  background: linear-gradient(135deg, #49243E, #704264);
-  color: #DBAFA0;
+  background: rgba(44, 62, 80, 0.95);
+  color: #BDC3C7;
   font-family: 'Inter', sans-serif;
 }
 
@@ -17,6 +17,7 @@ section {
   width: 100%;
   min-height: 100vh;
   padding: 40px 20px;
+  padding-left: 3px;
   scroll-margin-top: 80px; /* Accounts for fixed header */
   opacity: 0;
   transform: translateY(20px);
@@ -39,26 +40,13 @@ section.visible {
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+  scrollbar-width: none;
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 2px;
 }
-
-::-webkit-scrollbar-track {
-  background: rgba(73, 36, 62, 0.1);
-}
-
-::-webkit-scrollbar-thumb {
-  background: #BB8493;
-  border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #DBAFA0;
-}
-
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .main-content {

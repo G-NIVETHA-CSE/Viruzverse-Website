@@ -6,6 +6,7 @@ import Services from './components/jsfiles/Services';
 import Courses from './components/jsfiles/Courses';
 import OurTeam from './components/jsfiles/OurTeam';
 import Contact from './components/jsfiles/Contact';
+import Career from './components/jsfiles/Career';
 import Footer from './components/jsfiles/Footer';
 import './App.css';
 
@@ -50,6 +51,9 @@ function App() {
         </section>
         <section id="team">
           <OurTeam />
+        </section>
+        <section id="career">
+          <Career />
         </section>
         <section id="contact">
           <Contact />
