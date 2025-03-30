@@ -14,7 +14,7 @@ const Header = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
   
-      const sections = ["home", "about", "services", "courses", "team", "career", "contact"];
+      const sections = ["home", "about", "services", "products", "team", "career", "contact"];
       const scrollPosition = window.scrollY + headerHeight + scrollBuffer;
   
       let activeSectionFound = false;
@@ -96,7 +96,7 @@ const Header = () => {
 
         <nav className={isMenuOpen ? "active" : ""}>
           <ul>
-            {["home", "about", "services", "courses", "team", "career", "contact"].map((section) => (
+            {["home", "about", "services", "products", "team", "career", "contact"].map((section) => (
               <li key={section}>
                 <button
                   onClick={() => handleLinkClick(section)}

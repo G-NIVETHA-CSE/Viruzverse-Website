@@ -7,7 +7,7 @@ const About = () => {
 
       <section className="about-content">
         <div className="about-heading">
-          <h1>🚀 Empowering the Future, One Innovation at a Time!</h1>
+          <h1>Empowering the Future, One Innovation at a Time!</h1>
         </div>
 
         <div className="about-section">

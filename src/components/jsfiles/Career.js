@@ -14,12 +14,12 @@ const Career = () => {
   });
 
   const jobListings = [
-    { title: "Software Engineer", location: "Remote", description: "Develop and maintain our web applications." },
-    { title: "Full Stack Developer", location: "Hybrid", description: "Work on both frontend and backend development." },
-    { title: "VR Developer", location: "Remote", description: "Build immersive virtual reality experiences." },
-    { title: "Social Media Manager", location: "On-Site",description: "Manage and grow our online presence." },
-    { title: "Cloud Engineer", location: "Remote", description: "Develop scalable cloud-based solutions." },
-    { title: "AI/ML Engineer", location: "Hybrid", description: "Work on artificial intelligence and machine learning projects." },
+    { title: "Software Engineer", location: "Coimbatore", description: "Develop and maintain our web applications." },
+    { title: "Full Stack Developer", location: "Coimbatore", description: "Work on both frontend and backend development." },
+    { title: "VR Developer", location: "Coimbatore", description: "Build immersive virtual reality experiences." },
+    { title: "Social Media Manager", location: "Coimbatore",description: "Manage and grow our online presence." },
+    { title: "Cloud Engineer", location: "Coimbatore", description: "Develop scalable cloud-based solutions." },
+    { title: "UI/UX Developer", location: "Coimbatore", description: "Creating an user-friendly designs to enhance digital experiences across web and mobile platforms." },
   ];
 
   const handleApplyClick = (jobTitle) => {

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Inter:wght@400;600&display=swap');
+
 .about-container {
   background: linear-gradient(135deg, #F4F6F6, #BDC3C7); /* Light color background */
   min-height: 100vh;
@@ -82,7 +84,7 @@
 }
 
 /* Quote Section */
-.quote h3{
+.quote h3 {
   margin-top: 30px;
   font-size: 1.4rem;
   font-style: italic;

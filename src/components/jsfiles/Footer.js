@@ -48,7 +48,7 @@ const Footer = () => {
             <li><button onClick={() => scrollToSection('home')} className="footer-link">Home</button></li>
             <li><button onClick={() => scrollToSection('about')} className="footer-link">About</button></li>
             <li><button onClick={() => scrollToSection('services')} className="footer-link">Services</button></li>
-            <li><button onClick={() => scrollToSection('courses')} className="footer-link">Courses</button></li>
+            <li><button onClick={() => scrollToSection('products')} className="footer-link">Products</button></li>
             <li><button onClick={() => scrollToSection('contact')} className="footer-link">Contact</button></li>
             <li><button onClick={() => scrollToSection('team')} className="footer-link">Our Team</button></li>
             <li><button onClick={() => scrollToSection('career')} className="footer-link">Career</button></li>

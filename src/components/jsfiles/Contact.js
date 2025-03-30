@@ -39,7 +39,7 @@ const Contact = () => {
   
   return (
     <div className="contact-wrapper">
-      <h1 className="contact-heading">🚀 Let's Connect & Create Something Amazing! 🌟</h1>
+      <h1 className="contact-heading">Let's Connect & Create Something Amazing!</h1>
 
       <div className="contact-container">
         <div className="contact-left">

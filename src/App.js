@@ -3,7 +3,7 @@ import Header from './components/jsfiles/Header';
 import Hero from './components/jsfiles/Hero';
 import About from './components/jsfiles/About';
 import Services from './components/jsfiles/Services';
-import Courses from './components/jsfiles/Courses';
+import Products from './components/jsfiles/Products';
 import OurTeam from './components/jsfiles/OurTeam';
 import Contact from './components/jsfiles/Contact';
 import Career from './components/jsfiles/Career';
@@ -46,8 +46,8 @@ function App() {
         <section id="services">
           <Services />
         </section>
-        <section id="courses">
-          <Courses />
+        <section id="products">
+          <Products />
         </section>
         <section id="team">
           <OurTeam />

@@ -1,0 +1,139 @@
+.products-container {
+  background: linear-gradient(135deg, #F4F6F6, #BDC3C7);
+  min-height: 100vh;
+  padding-top: 80px;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+.products-heading h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #1C2833;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.products-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.product-box {
+  width: 320px;
+  padding: 50px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  color: #0c131a;
+  background: #AAB7B8;
+}
+
+.product-box:nth-child(1) {
+  background: linear-gradient(to right, #BDC3C7, #344a5f);
+}
+
+.product-box:nth-child(2) {
+  background: linear-gradient(to right, #344a5f, #AAB7B8);
+}
+
+.product-box:nth-child(3) {
+  background: linear-gradient(to right, #BDC3C7, #344a5f);
+}
+
+.product-box:nth-child(4) {
+  background: linear-gradient(to right, #344a5f, #AAB7B8);
+}
+
+.product-box:nth-child(5) {
+  background: linear-gradient(to right, #BDC3C7, #344a5f);
+}
+
+.product-box:nth-child(6) {
+  background: linear-gradient(to right, #344a5f, #AAB7B8);
+}
+
+.product-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+  opacity: 0.9;
+}
+
+.product-box h2 {
+  font-size: 1.6rem;
+  color: black;
+}
+.product-box ul {
+  list-style: none; /* Remove default bullet points */
+  padding: 0;
+  margin-top: 15px;
+}
+
+.product-box li {
+  font-size: 1rem;
+  color: black; /* Keep text readable */
+  font-weight: bold;
+  padding: 8px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.product-box p {
+  font-size: 1.1rem;
+  color: white;
+  margin-top: 10px;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .products-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .product-box {
+    width: 95%;
+    padding: 50px;
+    margin-right: 21px;
+  }
+
+  .products-heading h1 {
+    font-size: 2rem;
+    right: 20px;
+  }
+
+  .product-box h2 {
+    font-size: 1.4rem;
+  }
+
+  .product-box p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .products-list {
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+  }
+
+  .product-box {
+    width: 45%;
+  }
+}

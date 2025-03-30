@@ -5,27 +5,31 @@ const Services = () => {
   const services = [
     {
       title: 'Web Development',
-      description: 'We craft responsive and engaging websites to establish your online presence.',
+      description: 'Custom, responsive, and SEO-friendly websites.',
     },
     {
-      title: 'Mobile App Development',
-      description: 'Our team develops user-friendly mobile applications for both Android and iOS platforms.',
+      title: 'Digital Marketing Services',
+      description: 'SEO, social media marketing, PPC, and branding strategies to grow your online presence.',
     },
     {
-      title: 'Digital Marketing',
-      description: 'We offer comprehensive digital marketing strategies to enhance your brand visibility.',
+      title: 'ERP & CRM Development',
+      description: 'Streamlining business operations with customized solutions.',
     },
     {
       title: 'E-commerce Solutions',
-      description: 'Our e-commerce platforms are designed to provide seamless shopping experiences.',
+      description: 'Complete online store development and integration.',
     },
     {
-      title: 'Cloud Services',
-      description: 'We provide scalable cloud solutions to optimize your business operations.',
+      title: 'Cloud Computing',
+      description: 'Cloud-based solutions for scalability and efficiency.',
     },
     {
-      title: 'VR Services',
-      description: 'We create immersive virtual reality experiences for various industries and applications.',
+      title: 'IoT & Data Science',
+      description: 'Smart solutions for data-driven decision-making.',
+    },
+    {
+      title: 'UI/UX Design Services',
+      description: 'Creative and user-friendly interface design to enhance user experience.',
     },
   ];
   return (
